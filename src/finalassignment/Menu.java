@@ -52,7 +52,10 @@ public class Menu extends PApplet {
             }
         }
         
-        
+        if(ÑustaHuillac.isCollidingWith(enemy1)) {
+            fill(255, 0, 0);
+            this.text("ow", ÑustaHuillac.x, ÑustaHuillac.y);
+        }
         
     }
     public void mousePressed() {
