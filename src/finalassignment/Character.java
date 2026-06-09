@@ -14,7 +14,7 @@ package finalassignment;
 public class Character extends PApplet {
     public int x;
     public int y;
-    private PImage image;
+    PImage image;
     private PApplet app;
     
     public Character(PApplet p, int x, int y, String imagePath){

@@ -11,6 +11,11 @@ import processing.core.PImage;
  * @author 343120135
  */
 public class Menu extends PApplet {
+    Enemies E1;
+    Enemies E2;
+    Enemies E3;
+    Enemies E4;
+    Enemies E5;
     Character ÑustaHuillac;
     private PImage bg;
     int s;
@@ -24,8 +29,13 @@ public class Menu extends PApplet {
     public void setup(){    
         bg = loadImage("images/background.jpg");
         textSize(66);
-        ÑustaHuillac = new Character(this, 0, 200, "images/warrior1.png");
+        ÑustaHuillac = new Character(this, 10, 400, "images/warrior1.png");
         startbutton = new Button(this, 100, 200, "images/start-button.png");
+       E1 = new Enemies(this,270, 408, "images/enemy1.png");
+       E2 = new Enemies(this,310, 408, "images/enemy2.png");
+       E3 = new Enemies(this,350, 408, "images/enemy3.png");
+       E4 = new Enemies(this,390, 408, "images/enemy4.png");
+       E5 = new Enemies(this,440, 408, "images/enemy5.png");
     }
     
     public void draw(){
@@ -37,7 +47,11 @@ public class Menu extends PApplet {
             startbutton.draw();
         } else if (stage == 1) {
             ÑustaHuillac.draw();
-            
+            E1.draw();
+            E2.draw();
+            E3.draw();
+            E4.draw();
+            E5.draw();        
          if (keyPressed) {
          if (keyCode == LEFT) {
          ÑustaHuillac.move(-(5+s), 0);
@@ -52,7 +66,7 @@ public class Menu extends PApplet {
             }
         }
         
-        if(ÑustaHuillac.isCollidingWith(enemy1)) {
+        if(ÑustaHuillac.isCollidingWith(E1)) {
             fill(255, 0, 0);
             this.text("ow", ÑustaHuillac.x, ÑustaHuillac.y);
         }
