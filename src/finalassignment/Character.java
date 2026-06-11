@@ -11,7 +11,7 @@ package finalassignment;
  import processing.core.PApplet;
  import processing.core.PImage;
 
-public class Character extends PApplet {
+public class Character extends PApplet { //character class so the menu can pull it from
     public int x;
     public int y;
     PImage image;
@@ -24,7 +24,7 @@ public class Character extends PApplet {
         this.image = app.loadImage(imagePath);
     }
     
-    public void move(int dx, int dy){
+    public void move(int dx, int dy){ //so the character moves by pressing keys and sliding across the screen
         x += dx;
         y+= dy;
     }
@@ -32,7 +32,7 @@ public class Character extends PApplet {
     public void draw(){
         app.image(image, x, y);
     }
-  public boolean isCollidingWith(Character other) {
+  public boolean isCollidingWith(Character other) { //colliding into enemies from any direction
       boolean isLeftOfOtherRight = x < other.x + other.image.width;
       boolean isRightOfOtherLeft = x + image.width > other.x;
       boolean isAboveOtherBottom = y < other.y + other.image.height;

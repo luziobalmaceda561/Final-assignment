@@ -13,7 +13,7 @@ package finalassignment;
  import processing.core.PApplet;
  import processing.core.PImage;
 
-public class Enemies extends Character {
+public class Enemies extends Character { //child class of the character class for the enemies
     public int x;
     public int y;
     private PImage images;
@@ -21,7 +21,7 @@ public class Enemies extends Character {
 
     
 
-public Enemies(PApplet p, int x, int y, String imagePath){
+public Enemies(PApplet p, int x, int y, String imagePath){ //a super to call from the parent class
     super(p,x,y,imagePath);
 }
 

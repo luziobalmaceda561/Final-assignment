@@ -26,7 +26,7 @@ public class Menu extends PApplet {
     public void settings() {
         size(600,600);
     }
-    public void setup(){    
+    public void setup(){    //background and character image placement
         bg = loadImage("images/background.jpg");
         textSize(66);
         ÑustaHuillac = new Character(this, 10, 400, "images/warrior1.png");
@@ -38,7 +38,7 @@ public class Menu extends PApplet {
        E5 = new Enemies(this,440, 408, "images/enemy5.png");
     }
     
-    public void draw(){
+    public void draw(){ //levels and character movement
         image(bg, 0, 0, width, height);
         
         if (stage == 0) {
@@ -66,13 +66,13 @@ public class Menu extends PApplet {
             }
         }
         
-        if(ÑustaHuillac.isCollidingWith(E1)) {
+        if(ÑustaHuillac.isCollidingWith(E1)) { //collision damage to the main character
             fill(255, 0, 0);
             this.text("ow", ÑustaHuillac.x, ÑustaHuillac.y);
         }
         
     }
-    public void mousePressed() {
+    public void mousePressed() { //just to start the game by pushing the start button
          if (stage == 0 ) {
         if (startbutton.isClicked(mouseX, mouseY)) {
         stage = 1;
