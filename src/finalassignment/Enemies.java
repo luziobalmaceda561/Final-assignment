@@ -14,8 +14,6 @@ package finalassignment;
  import processing.core.PImage;
 
 public class Enemies extends Character { //child class of the character class for the enemies
-    public int x;
-    public int y;
     private PImage images;
     private PApplet app;
 

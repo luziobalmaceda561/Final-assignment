@@ -52,24 +52,49 @@ public class Menu extends PApplet {
             E3.draw();
             E4.draw();
             E5.draw();        
-         if (keyPressed) {
-         if (keyCode == LEFT) {
-         ÑustaHuillac.move(-(5+s), 0);
-        } else if (keyCode == RIGHT) {
-          ÑustaHuillac.move(5, 0);
-        } else if (keyCode == UP) {
-          ÑustaHuillac.move(0, -5);
-        } else if (keyCode == DOWN) {
-          ÑustaHuillac.move(0, 5);
-        }
-  
+            if (keyPressed) {
+               if (keyCode == LEFT) {
+               ÑustaHuillac.move(-(5+s), 0);
+              } else if (keyCode == RIGHT) {
+                ÑustaHuillac.move(5, 0);
+              } else if (keyCode == UP) {
+                ÑustaHuillac.move(0, -5);
+              } else if (keyCode == DOWN) {
+                ÑustaHuillac.move(0, 5);
+              }
+
             }
+            if(ÑustaHuillac.isCollidingWith(E1)) { //collision damage to the main character
+               fill(25, 0, 0);
+               E1.x = 900;
+               E1.y = 900;
+               this.text("ow", ÑustaHuillac.x, ÑustaHuillac.y);
+
+           }
+           if(ÑustaHuillac.isCollidingWith(E2)) { 
+               fill(25, 0, 0);
+               this.text("ouch", ÑustaHuillac.x, ÑustaHuillac.y);
+               E2.x = 700;
+           }
+           if(ÑustaHuillac.isCollidingWith(E3)) { 
+               fill(25, 0, 0);
+               this.text(".", ÑustaHuillac.x, ÑustaHuillac.y);
+               E3.x = 700;
+           }if(ÑustaHuillac.isCollidingWith(E4)) { 
+               fill(25, 0, 0);
+               this.text(".", ÑustaHuillac.x, ÑustaHuillac.y);
+               E4.x = 700;
+           }if(ÑustaHuillac.isCollidingWith(E5)) { 
+               fill(25, 0, 0);
+               this.text(".", ÑustaHuillac.x, ÑustaHuillac.y);
+               E5.x = 700;
+           }
+         
+         
         }
         
-        if(ÑustaHuillac.isCollidingWith(E1)) { //collision damage to the main character
-            fill(255, 0, 0);
-            this.text("ow", ÑustaHuillac.x, ÑustaHuillac.y);
-        }
+        
+        
         
     }
     public void mousePressed() { //just to start the game by pushing the start button
